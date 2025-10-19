@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .neon-card{
+            box-shadow:0 0 20px #39ff14;
+        }
+       @keyframes flip {
+        0% {
+          transform: rotateY(0deg);
+        }
+        25% {
+          transform: rotateY(180deg);
+        }
+        50%{
+            transform: rotateY(360deg);
+        }
+        100% {
+          transform: rotateY(360deg);
+        }
+      }
+
+      .flip {
+        animation: flip 6s linear infinite;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+      }
+    </style>
+  </head>
+  <body class="flex justify-center items-center bg-black overflow-scroll">
+<div class="flex max-w-lg bg-black text-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 mt-[100px] h-full text-center justify-center items-center flex-col p-5 shadow-xl shadow-[0_0_20px_#00ffff border-none rounded-lg neon-card mb-3" data-testid="test-profile-card">
+    <div class="p-5">
+        <a href="#">
+            <h1 class="mb-2 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white text-white font-serif" data-testid="test-user-name">OLAWALE OYEKAN</h5>
+        </a>
+        <p class="mb-3 font-normal text-gray-300 dark:text-gray-400" data-testid="test-user-bio">Hi, my name is Olawale Oyekan. I’m an 18-year-old Computer Science student at Olabisi Onabanjo University and an aspiring full-stack developer. I’m currently focused on front-end development, with hands-on experience in HTML, CSS, JavaScript, and Tailwind CSS. I’m passionate about building responsive, user-friendly web applications and continuously improving my skills to become a well-rounded developer.</p>
+        <div class="Time my-5 text-2xl my-3 font-bold">
+            Time(in millisecond):
+        </div>
+        <div class="flex justify-center ">
+         <img class="rounded-md text-center w-40 h-40 mt-6 flip" src="profile-pic.jpg" data-testid="test-user-avatar"/></div>
+    </div>
+    <div data-testid="test-user-social-links flex ">
+        <h2 class=" text-2xl font-bold">Social links:</h2>
+        
+            <label>X:</label><a href ="https://x.com/OlawaleOyekan1?t=DjlsbpVUA03ITQzcNrbIWg&s=09" class ="text-blue-500"><ul>https://x.com/OlawaleOyekan1?t=DjlsbpVUA03ITQzcNrbIWg&s=09</ul></a>
+           <label>Instagram:</label><a href ="https://www.instagram.com/wal_ie24/" class="text-blue-500 hover:text-blue-300"><ul data-testid="test-user-social-instagram" >https://www.instagram.com/wal_ie24/</ul></a>
+           <label>Github:</label><a href ="https://github.com/Olawalito" class="text-blue-500 hover:text-blue-300"><ul data-testid="test-user-social-Github" >https://github.com/Olawalito</ul></a>
+    </div>
+    <div data-testid="test-user-hobbies">
+        <h2 class="text-2xl my-3 font-bold">Hobbies:</h2>
+        <ul>Football</ul>
+        <ul>Chess</ul>
+        <ul>Reading</ul>
+    </div>
+    <div data-testid="test-user-dislikes">
+        <h2 class="text-2xl my-3 font-bold">Dislikes:</h2>
+        <ul>Messy spaces</ul>
+        <ul>Slow internet</ul>
+    </div>
+</div>
+<script>
+   let timeDiv = document.querySelector('.Time');
+    let currentTime = Date.now();
+    timeDiv.insertAdjacentHTML('beforeend', currentTime)
+</script>
+  </body>
+</html>
+    
